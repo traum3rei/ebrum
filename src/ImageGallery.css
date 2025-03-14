@@ -65,3 +65,23 @@
 .fullscreen-content button:hover {
   background-color: #0056b3;
 }
+
+.gallery-title {
+  font-size: 2.5rem; /* Default for desktops */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Adjust for tablets */
+@media (max-width: 768px) {
+  .gallery-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* Adjust for phones */
+@media (max-width: 480px) {
+  .gallery-title {
+    font-size: 1.4rem;
+  }
+}

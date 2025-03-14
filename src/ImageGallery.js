@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import axios from 'axios';
-import './ImageGallery.css';
+import axios from "axios";
+import "./ImageGallery.css";
 
 const ImageGallery = () => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [fullscreenImage, setFullscreenImage] = useState(null);
-  const [imageFiles, setImageFiles] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -17,13 +16,13 @@ const ImageGallery = () => {
   const fetchImages = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('https://cyb-be.vercel.app/api/images');
+      const response = await axios.get("https://cyb-be.vercel.app/api/images");
       setImages(response.data);
       setLoading(false);
     } catch (err) {
-      setError('Error fetching images');
+      setError("Error fetching images");
       setLoading(false);
-      console.error('Error fetching images:', err);
+      console.error("Error fetching images:", err);
     }
   };
 
@@ -34,7 +33,7 @@ const ImageGallery = () => {
   const handleCloseFullscreen = () => {
     setFullscreenImage(null);
   };
-  
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
 
@@ -42,7 +41,7 @@ const ImageGallery = () => {
     <div className="image-gallery">
       {/* Title Section */}
       <h1 className="gallery-title">Things that made me think of you</h1>
-      
+
       {/* Gallery container */}
       <div className="gallery-container">
         {images.map((image, index) => (
