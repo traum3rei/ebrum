@@ -1,7 +1,8 @@
-.App {
+.App { 
   text-align: center;
   color: rgb(204, 204, 204);
-  overflow: hidden;
+  overflow: auto; /* Allows scrolling */
+  -webkit-overflow-scrolling: touch; 
 }
 
 .App-logo {
